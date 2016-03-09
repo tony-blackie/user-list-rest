@@ -18,9 +18,7 @@ module.exports = function(config) {
       'public/lib/angular.js',
       'public/lib/angular-ui-router.js',
       'src/app/**/*.module.js',
-      'src/app/**/*.js',
-      'test/app/**/*.spec.js',
-      'test/app/**/*.spec.js'
+      'src/app/**/*.js'
     ],
 
 
@@ -38,7 +36,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
 
     // web server port
