@@ -17,7 +17,7 @@ gulp.task('styles', function(){
 });
 
 gulp.task('app', function(){
-  return gulp.src(['src/app/**/*.module.js', 'src/app/**/*.js'])
+  return gulp.src(['src/app/**/*.module.js', 'src/app/**/*.js', '!src/app/**/*.spec.js'])
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
