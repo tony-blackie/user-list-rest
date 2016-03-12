@@ -11,8 +11,9 @@
 			getSomeList: getSomeList
 		});
 
+
 		function getSomeList() {
-			alert('8');
+			alert('9');
 		}
 	}
 })();
