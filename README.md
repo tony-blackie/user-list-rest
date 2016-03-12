@@ -25,8 +25,7 @@ phantomjs
 
 ```
 1. Run tests: karma start
-2. Run build: gulp app
-3. Run server: nodemon server.js (you can use 'node server.js', but autoreload won't work)
+2. Rebuild app and run server: gulp
 ```
 
 ### Troubleshooting
