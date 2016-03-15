@@ -17,16 +17,43 @@
 		.module('app.users')
 		.controller('UserListController', UserListController);
 
-	function UserListController() {
+	UserListController.$inject = ['UserListService'];
+
+	function UserListController(UserListService) {
 		var vm = this;
 		angular.extend(vm, {
-			getSomeList: getSomeList
+			getAllUsers: getAllUsers
 		});
 
 
-		function getSomeList() {
-			alert('9');
+		function getAllUsers() {
+			UserListService.getAllUsers().then(function(users) {
+				console.log(users.data);
+			});
 		}
+	}
+})();
+(function() {
+	"use strict";
+
+	angular
+		.module('app.users')
+		.factory('UserListService', UserListService);
+
+	UserListService.$inject = ['$http'];
+
+	function UserListService($http) {
+		var service = {};
+
+		angular.extend(service, {
+			getAllUsers: getAllUsers
+		});
+
+		function getAllUsers() {
+			return $http.get('/users');
+		}
+
+		return service;
 	}
 })();
 (function() {

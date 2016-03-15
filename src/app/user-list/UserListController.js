@@ -5,15 +5,19 @@
 		.module('app.users')
 		.controller('UserListController', UserListController);
 
-	function UserListController() {
+	UserListController.$inject = ['UserListService'];
+
+	function UserListController(UserListService) {
 		var vm = this;
 		angular.extend(vm, {
-			getSomeList: getSomeList
+			getAllUsers: getAllUsers
 		});
 
 
-		function getSomeList() {
-			alert('9');
+		function getAllUsers() {
+			UserListService.getAllUsers().then(function(users) {
+				console.log(users.data);
+			});
 		}
 	}
 })();

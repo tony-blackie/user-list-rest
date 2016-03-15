@@ -5,7 +5,7 @@ var app = express();
 
 app.use(express.static('./public', {index: 'userList.html'}));
 
-app.get('/users', (req, res)=> {
+app.get('/users', function(req, res) {
 	res.json(users);
 });
 
