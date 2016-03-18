@@ -17,7 +17,9 @@ module.exports = function(config) {
     files: [
       'public/lib/angular.js',
       'public/lib/angular-ui-router.js',
+      'public/lib/angular-mocks.js',
       'src/app/**/*.module.js',
+      'src/app/**/*.spec.js',
       'src/app/**/*.js'
     ],
 
@@ -65,4 +67,4 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
   })
-}
+};
